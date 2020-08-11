@@ -1,0 +1,18 @@
+.listCard {
+  margin-right: 30px;;
+  h3 {
+    margin: 20px auto;
+  }
+
+  img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
