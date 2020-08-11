@@ -13,6 +13,7 @@ export default class ListCard extends Component {
   }
 
   handleClick = () => {
+    this.props.handleCartValue(this.state.isClicked);
     this.setState({
       isClicked: !this.state.isClicked,
     });
@@ -47,4 +48,5 @@ export default class ListCard extends Component {
 ListCard.propTypes = {
   price: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  handleCartValue: PropTypes.func.isRequired,
 };

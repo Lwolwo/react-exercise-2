@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './List.scss';
 import ListCard from '../listCard/ListCard';
@@ -46,7 +47,14 @@ export default class List extends Component {
           </h2>
           <div className="listCardWrapper">
             {iPhoneData.map((item, index) => (
-              <ListCard key={index} price={item.price} name={item.name} />
+              <ListCard
+                key={index}
+                price={item.price}
+                name={item.name}
+                handleCartValue={(isClicked) =>
+                  this.props.handleCartValue(isClicked)
+                }
+              />
             ))}
           </div>
         </div>
@@ -56,7 +64,14 @@ export default class List extends Component {
           </h2>
           <div className="listCardWrapper">
             {HuaWeiData.map((item, index) => (
-              <ListCard key={index} price={item.price} name={item.name} />
+              <ListCard
+                key={index}
+                price={item.price}
+                name={item.name}
+                handleCartValue={(isClicked) =>
+                  this.props.handleCartValue(isClicked)
+                }
+              />
             ))}
           </div>
         </div>
@@ -64,3 +79,7 @@ export default class List extends Component {
     );
   }
 }
+
+List.propTypes = {
+  handleCartValue: PropTypes.func.isRequired,
+};
